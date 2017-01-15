@@ -1,0 +1,20 @@
+{
+  "name": "space-systems-online",
+  "description": "",
+  "main": "",
+  "authors": [
+    "JP Sheehan"
+  ],
+  "license": "UNLICENSED",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

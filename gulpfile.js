@@ -17,22 +17,23 @@ var logger = require('gulp-print');
 
 // Main Task
 
-gulp.task('default', function() {
-  gulp.watch([
-    'lib/**/*.js',
-    '!lib/script/**',
-    'test/**/*Test.js'
-  ], [
-    'mocha'
-  ]);
 
-  gulp.watch([
-    'app/**/*.js',
-    'spec/**/*Spec.js'
-  ], [
-    'karma'
-  ]);
-});
+// gulp.task('default', function() {
+//   gulp.watch([
+//     'lib/**/*.js',
+//     '!lib/script/**',
+//     'test/**/*Test.js'
+//   ], [
+//     'mocha'
+//   ]);
+//
+//   gulp.watch([
+//     'app/**/*.js',
+//     'spec/**/*Spec.js'
+//   ], [
+//     'karma'
+//   ]);
+// });
 
 
 // Testing
@@ -79,8 +80,8 @@ gulp.task('karma', function(done) {
 
 gulp.task('sass', function() {
   return gulp.src('public/**/*.scss')
-    // .pipe(changedInPlace('.'))
-    // .pipe(logger())
+    .pipe(changedInPlace('.'))
+    .pipe(logger())
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('./public/'))
     /* Gulp takes everything that's a wildcard
@@ -91,22 +92,33 @@ var tsProject = ts.createProject('tsconfig.json');
 gulp.task('tsc', function() {
   return tsProject.src()
     .pipe(changedInPlace('.'))
-    // .pipe(logger())
+    .pipe(logger())
     .pipe(tsProject())
     .pipe(gulp.dest('.'));
 });
 
 
+
+gulp.task('build', [
+  'sass',
+  'tsc'
+]);
+
+
 // Serving
 
-gulp.task('serve', ['sass', 'tsc'], function() {
+gulp.task('serve', function() {
+
   return nodemon({
     script: 'server.js',
-    ext: 'html js css',
+    ext: 'html js css scss ts',
     ignore: [
       'lib/gmat/*',
       'lib/gmat-dist/*'
     ],
-    tasks: ['sass', 'tsc']
-  });
+    // tasks: ['sass', 'tsc']
+  })
+  .on('start', ['build'])
+  .on('change', ['build'])
+  .on('restart', ['build']);
 });

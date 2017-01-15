@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent }  from './app.component';
 import { HomeComponent }      from './home/home.component';
 import { AboutComponent }    from './about/about.component';
+import { SimulatorComponent}  from './simulator/simulator.component';
 
 import { AppRoutingModule }   from './app-routing.module';
 import { SharedModule }       from './shared/shared.module';
@@ -17,7 +18,8 @@ import { SharedModule }       from './shared/shared.module';
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    SimulatorComponent
   ],
   providers:    [
 

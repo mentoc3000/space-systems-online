@@ -1,0 +1,7 @@
+{
+   "verbose": true,
+   "ignore": [
+      "lib/gmat/*",
+      "lib/gmat-dist/*"
+   ]
+}

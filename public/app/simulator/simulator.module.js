@@ -29,4 +29,3 @@ var SimulatorModule = (function () {
     return SimulatorModule;
 }());
 exports.SimulatorModule = SimulatorModule;
-//# sourceMappingURL=simulator.module.js.map

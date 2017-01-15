@@ -1,7 +1,8 @@
 {
   "name": "space-systems-online",
   "version": "0.0.1",
-  "description": "",
+  "description": "Online astrodynamics simulator",
+  "main": "server.js",
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
     "e2e": "tsc && concurrently \"http-server -s\" \"protractor protractor.config.js\" --kill-others --success first",
@@ -37,7 +38,18 @@
     "@types/jasmine": "^2.5.36",
     "@types/node": "^6.0.46",
     "canonical-path": "0.0.2",
+    "chai": "^3.5.0",
     "concurrently": "^3.1.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-jshint": "^2.0.4",
+    "gulp-mocha": "^3.0.1",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.0.0",
+    "gulp-typescript": "^3.1.4",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.8",
     "http-server": "^0.9.0",
     "jasmine-core": "~2.4.1",
     "karma": "^1.3.0",
@@ -47,8 +59,11 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "lite-server": "^2.2.2",
     "lodash": "^4.16.4",
+    "mocha": "^3.2.0",
     "morgan": "^1.7.0",
+    "nodemon": "^1.11.0",
     "protractor": "~4.0.14",
+    "q": "^1.4.1",
     "rimraf": "^2.5.4",
     "tslint": "^3.15.1",
     "typescript": "~2.0.10"
@@ -56,5 +71,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mentoc3000/space-systems-online.git"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/mentoc3000/space-systems-online/issues"
+  },
+  "homepage": "https://github.com/mentoc3000/space-systems-online#readme"
 }

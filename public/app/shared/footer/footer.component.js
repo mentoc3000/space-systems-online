@@ -24,4 +24,3 @@ var FooterComponent = (function () {
     return FooterComponent;
 }());
 exports.FooterComponent = FooterComponent;
-//# sourceMappingURL=footer.component.js.map

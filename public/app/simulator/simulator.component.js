@@ -21,4 +21,3 @@ var SimulatorComponent = (function () {
     return SimulatorComponent;
 }());
 exports.SimulatorComponent = SimulatorComponent;
-//# sourceMappingURL=simulator.component.js.map

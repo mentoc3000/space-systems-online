@@ -34,4 +34,3 @@ var SharedModule = (function () {
     return SharedModule;
 }());
 exports.SharedModule = SharedModule;
-//# sourceMappingURL=shared.module.js.map

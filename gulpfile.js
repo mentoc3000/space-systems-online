@@ -80,7 +80,7 @@ gulp.task('karma', function(done) {
 gulp.task('sass', function() {
   return gulp.src('public/**/*.scss')
     // .pipe(changedInPlace('.'))
-    .pipe(logger())
+    // .pipe(logger())
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('./public/'))
     /* Gulp takes everything that's a wildcard
@@ -91,7 +91,7 @@ var tsProject = ts.createProject('tsconfig.json');
 gulp.task('tsc', function() {
   return tsProject.src()
     .pipe(changedInPlace('.'))
-    .pipe(logger())
+    // .pipe(logger())
     .pipe(tsProject())
     .pipe(gulp.dest('.'));
 });

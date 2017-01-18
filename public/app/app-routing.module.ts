@@ -4,7 +4,6 @@ import { Routes,
 
 import { HomeComponent }        from './home/home.component';
 import { AboutComponent }       from './about/about.component';
-import { SimulatorComponent }   from './simulator/simulator.component';
 
 export const routes: Routes = [
   {
@@ -17,7 +16,7 @@ export const routes: Routes = [
   },
   {
     path: 'simulator',
-    component: SimulatorComponent
+    loadChildren: 'app/simulator/simulator.module#SimulatorModule'
   },
 ]
 

@@ -8,9 +8,9 @@ const routes: Routes = [
   {
     path: '',
     component: SimulatorComponent,
-    children: [
-      {}
-    ]
+    // children: [
+    //   {}
+    // ]
   }
 ];
 

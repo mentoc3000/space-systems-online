@@ -77,10 +77,17 @@ gulp.task('karma', function(done) {
 
 // Building
 
-
 gulp.task('sass', function() {
   return gulp.src('public/**/*.scss')
-    .pipe(changedInPlace('.'))
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./public/'))
+    /* Gulp takes everything that's a wildcard
+     * or a globstar into its virtual file name. */
+});
+
+gulp.task('sass:changed', function() {
+  return gulp.src('public/**/*.scss')
+    .pipe(changedInPlace())
     .pipe(logger())
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('./public/'))
@@ -88,8 +95,15 @@ gulp.task('sass', function() {
      * or a globstar into its virtual file name. */
 });
 
-var tsProject = ts.createProject('tsconfig.json');
 gulp.task('tsc', function() {
+  var tsProject = ts.createProject('tsconfig.json');
+  return tsProject.src()
+    .pipe(tsProject())
+    .pipe(gulp.dest('.'));
+});
+
+gulp.task('tsc:changed', function() {
+  var tsProject = ts.createProject('tsconfig.json');
   return tsProject.src()
     .pipe(changedInPlace('.'))
     .pipe(logger())
@@ -104,6 +118,10 @@ gulp.task('build', [
   'tsc'
 ]);
 
+gulp.task('build:changed', [
+  'sass:changed',
+  'tsc:changed'
+]);
 
 // Serving
 
@@ -111,14 +129,14 @@ gulp.task('serve', function() {
 
   return nodemon({
     script: 'server.js',
-    ext: 'html js css scss ts',
+    ext: 'html scss ts',
     ignore: [
       'lib/gmat/*',
       'lib/gmat-dist/*'
     ],
     // tasks: ['sass', 'tsc']
   })
-  .on('start', ['build'])
-  .on('change', ['build'])
-  .on('restart', ['build']);
+  .on('start', ['build:changed'])
+  .on('change', ['build:changed'])
+  .on('restart', ['build:changed']);
 });

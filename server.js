@@ -5,13 +5,18 @@ var express = require('express');
 
 var app = express();
 
-app.set('port', process.env.PORT || 3000);
-
+app.set('port', process.env.PORT || 3001);
+// app.enable('strict routing');
 
 app.use('/bower_components', express.static(path.join(__dirname,'bower_components')));
 app.use('/node_modules', express.static(path.join(__dirname,'node_modules')));
 app.use(express.static(path.join(__dirname, 'public')));
 
+var renderIndex = function(req, res) {
+    res.sendFile(path.resolve(__dirname, 'public/index.html'));
+};
+
+app.get('/*', renderIndex);
 
 // Serve the website
 

@@ -1,5 +1,7 @@
+@import "../../../colors.scss";
+
 .pages-header {
-  background-color: red;
+  background-color: $red;
 }
 
 .pages-header-nav {
@@ -8,15 +10,15 @@
 }
 
 .pages-header-nav__tab {
-  color: white;
+  color: $white;
   margin: 0;
   padding: 10px;
   display: inline-block;
   font-size: 1em;
   text-decoration: none;
   &:hover, &.active {
-    color: grey;
-    background-color: white;
+    color: $gray;
+    background-color: $white;
     text-decoration: none;
   }
 }
@@ -24,7 +26,7 @@
 .pages-header-nav__tab--logo {
   font-weight: bold;
   &:hover, &.active {
-    color: white;
+    color: $white;
     background-color: transparent;
     text-decoration: none;
   }

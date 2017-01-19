@@ -15,3 +15,4 @@ _temp
 *.swp
 .*.swp
 *.css
+.sass-cache

@@ -14,7 +14,6 @@ import { SimulatorMainMenu }    from './main-menu/simulator-main-menu.component'
     SimulatorMainMenu
   ],
   providers: [
-
   ]
 })
 export class SimulatorModule { }

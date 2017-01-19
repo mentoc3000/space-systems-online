@@ -5,7 +5,7 @@ var express = require('express');
 
 var app = express();
 
-app.set('port', process.env.PORT || 3001);
+app.set('port', process.env.PORT || 3002);
 // app.enable('strict routing');
 
 app.use('/bower_components', express.static(path.join(__dirname,'bower_components')));

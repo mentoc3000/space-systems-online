@@ -1,21 +1,23 @@
-<header>
+<header class="pages-header">
   <div class="container">
     <!-- <nav class="navbar navbar-default navbar-custom"> -->
-    <nav>
-      <a class="navbar-brand"
+    <nav class="pages-header-nav">
+      <a class="pages-header-nav__tab page-header-nav__tab--logo"
          routerLink="/home"
          routerLinkActive="active"
          [routerLinkActiveOptions]="{ exact: true }">Space Systems Online</a>
-      <ul class="nav navbar-nav">
-        <li><a routerLink="/home"
+      <a class="pages-header-nav__tab"
+               routerLink="/home"
                routerLinkActive="active"
-               [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
-        <li><a routerLink="/simulator"
-               routerLinkActive="active">Simulator</a></li>
+               [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        <a class="pages-header-nav__tab"
+               routerLink="/simulator"
+               routerLinkActive="active">Simulator</a>
         <!-- <li ng-class="{active: activeTab === 'contact'}"><a routerLink="contact">Contact</a></li> -->
-        <li><a routerLink="/about"
-               routerLinkActive="active">About</a></li>
-      </ul>
+        <a class="pages-header-nav__tab"
+               routerLink="/about"
+               routerLinkActive="active">About</a>
+
 
       <!-- <div ng-switch="vm.user">
 

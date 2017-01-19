@@ -136,7 +136,7 @@ gulp.task('serve', function() {
     ],
     // tasks: ['sass', 'tsc']
   })
-  .on('start', ['build:changed'])
-  .on('change', ['build:changed'])
-  .on('restart', ['build:changed']);
+  .on('start', ['build'])
+  .on('change', ['build'])
+  .on('restart', ['build']);
 });

@@ -4,15 +4,28 @@
 
 .pages-header-nav {
   background-color: transparent;
+  margin:0;
 }
 
 .pages-header-nav__tab {
   color: white;
+  margin: 0;
   padding: 10px;
   display: inline-block;
-  font-size: 1.5em;
+  font-size: 1em;
+  text-decoration: none;
+  &:hover, &.active {
+    color: grey;
+    background-color: white;
+    text-decoration: none;
+  }
 }
 
 .pages-header-nav__tab--logo {
-  // font-weight: bold;
+  font-weight: bold;
+  &:hover, &.active {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+  }
 }

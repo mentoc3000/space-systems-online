@@ -1,42 +1,45 @@
 @import "../../colors.scss";
 
+/* main menu */
 .main-menu-bar {
-position:absolute;
-left:0;
-width:75px;
-height:100%;
-background-color:red
+   position: relative;
+   display: block;
+   float: left;
+   top: 0;
+   left:0;
+   width: 75px;
+   height: 100%;
+   background-color: $red;
 }
 
 .main-menu-bar__main-menu {
-list-style-type: none;
-position: block;
-margin: 0;
-padding: 0;
+   list-style-type:none;
+   position: block;
+   margin: 0;
+   padding: 0;
 }
 
 .main-menu-bar__main-menu--bottom {
-position: absolute;
-bottom: 0;
+   position: fixed;
+   bottom: 0;
 }
 
 .main-menu-bar__tab {
-width: 75px;
-height: 75px;
-line-height: 75px;
-color: white;
-text-align: center;
-display: block;
-}
+   width: 75px;
+   height: 75px;
+   line-height: 75px;
+   color: $white;
+   text-align: center;
+   display: block;
 
-.main-menu-bar__tab.active,
-.main-menu-bar__tab:hover {
-color: gray;
-background-color: white;
-text-decoration: none;
+   &:hover, &.active {
+      color: $gray;
+      background-color: $white;
+      text-decoration: none;
+   }
 }
 
 .main-menu-bar__tab--logo {
-height: 50px;
-line-height: 50px;
+   height: 50px;
+   line-height: 50px;
 }

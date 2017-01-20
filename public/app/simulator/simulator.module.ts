@@ -3,7 +3,7 @@ import { NgModule }               from '@angular/core';
 import { SimulatorRoutingModule } from './simulator-routing.module';
 
 import { SimulatorComponent }   from './simulator.component';
-import { SimulatorMainMenu }    from './main-menu/simulator-main-menu.component';
+import { SimulatorMainMenuComponent }    from './main-menu/simulator-main-menu.component';
 
 @NgModule({
   imports: [
@@ -11,7 +11,7 @@ import { SimulatorMainMenu }    from './main-menu/simulator-main-menu.component'
   ],
   declarations: [
     SimulatorComponent,
-    SimulatorMainMenu
+    SimulatorMainMenuComponent
   ],
   providers: [
   ]

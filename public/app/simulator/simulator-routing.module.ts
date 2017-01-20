@@ -21,6 +21,10 @@ const routes: Routes = [
   {
     path: 'crafts',
     loadChildren: 'app/simulator/crafts/simulator-crafts.module#SimulatorCraftsModule'
+  },
+  {
+    path: 'orbit',
+    loadChildren: 'app/simulator/orbit/simulator-orbit.module#SimulatorOrbitModule'
   }
 ]
 }

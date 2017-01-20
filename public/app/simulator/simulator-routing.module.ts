@@ -17,6 +17,10 @@ const routes: Routes = [
   {
     path: 'ground',
     loadChildren: 'app/simulator/ground/simulator-ground.module#SimulatorGroundModule'
+  },
+  {
+    path: 'crafts',
+    loadChildren: 'app/simulator/crafts/simulator-crafts.module#SimulatorCraftsModule'
   }
 ]
 }

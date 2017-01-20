@@ -1,7 +1,9 @@
+@import "../../colors.scss";
+
 .footer {
   padding: 20px 0;
-  background-color: red;
-  color: white; }
+  background-color: $red;
+  color: $white; }
 
 .footer ul {
   list-style-type: none; }
@@ -11,5 +13,5 @@
   margin: 0 10px; }
 
 .footer li a {
-  color: white;
+  color: $white;
   text-decoration: none; }

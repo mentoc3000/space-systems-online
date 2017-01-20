@@ -25,6 +25,14 @@ const routes: Routes = [
   {
     path: 'orbit',
     loadChildren: 'app/simulator/orbit/simulator-orbit.module#SimulatorOrbitModule'
+  },
+  {
+    path: 'track',
+    loadChildren: 'app/simulator/track/simulator-track.module#SimulatorTrackModule'
+  },
+  {
+    path: 'options',
+    loadChildren: 'app/simulator/options/simulator-options.module#SimulatorOptionsModule'
   }
 ]
 }

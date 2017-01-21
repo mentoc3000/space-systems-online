@@ -27,7 +27,13 @@ gulp.task('default', function() {
 // Testing
 
 gulp.task('mocha', function() {
-  return gulp.src(['test/**/*Test.js'], {
+  return gulp.src([
+    '**/*Test.js',
+    '!server/lib/gmat/**/*',
+    '!server/lib/gmat-dist/**/*',
+    '!node_modules/**/*',
+    '!bower_components/**/*'
+  ], {
       read: false
     })
     .pipe(mocha({

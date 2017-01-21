@@ -2,7 +2,7 @@
 
 var expect = require('chai').expect;
 var sinon = require('sinon');
-var scriptBuilder = require('../../lib/scriptBuilder');
+var scriptBuilder = require('./scriptBuilder');
 
 function baseSimulation() {
 
@@ -29,17 +29,17 @@ function baseSimulation() {
          ],
          /*
          hardware: { // all hardware must be named
-            transmitter: [ 
+            transmitter: [
                {
-               } 
+               }
             ],
-            receiver: [ 
+            receiver: [
                {
-               } 
+               }
             ],
-            antenna: [ 
+            antenna: [
                {
-               } 
+               }
             ]
          }
          */
@@ -47,13 +47,13 @@ function baseSimulation() {
       space: {
          hardware: { // all hardware must be named
             /*
-            transmitter: [ 
+            transmitter: [
                {
                }
             ],
             */
             /*
-            receiver: [ 
+            receiver: [
                {
                }
             ],
@@ -64,13 +64,13 @@ function baseSimulation() {
                }
             ],
             /*
-            thruster: [ 
+            thruster: [
                {
                }
             ],
             */
             /*
-            tank: [ 
+            tank: [
                {
                }
             ],
@@ -100,7 +100,7 @@ function baseSimulation() {
             },
             ballistics: {
             },
-            hardware: [ 
+            hardware: [
             ],
             mission: {
                initial: {
@@ -452,7 +452,7 @@ describe('Script Builder Tests', function() {
    });
 
    describe('Mission Sequence builder', function() {
-      
+
       it('builds empty string for empty object', function() {
          var output = scriptBuilder.buildMissionSequence({});
          expect(output).to.equal('');

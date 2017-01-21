@@ -3,7 +3,7 @@
 var expect = require('chai').expect;
 var fs = require('fs');
 var path = require('path');
-var gmat = require('../../lib/gmat');
+var gmat = require('./gmat');
 
 describe('GMAT module tests',function() {
    var script, output, expectedOutput, filename;
@@ -30,7 +30,7 @@ describe('GMAT module tests',function() {
       }
 
       function readScript(filename) {
-         var dir = path.join(__dirname,'../../lib/gmat-dist/R2016a/samples/');
+         var dir = path.join(__dirname,'./gmat-dist/R2016a/samples/');
          var filepath = dir + filename + ".script";
          return fs.readFileSync(filepath);
       }
@@ -40,13 +40,13 @@ describe('GMAT module tests',function() {
 
       it('runs basic propagation', function() {
          var simulation = {
-            
+
          };
       });
    });
 
    function readOutput(filename) {
-      var dir = path.join(__dirname,'script-output/');
+      var dir = path.join(__dirname,'testScripts/');
       var filepath = dir + filename + '.output';
       return fs.readFileSync(filepath);
    }

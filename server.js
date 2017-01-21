@@ -10,10 +10,10 @@ app.set('port', process.env.PORT || 3002);
 
 app.use('/bower_components', express.static(path.join(__dirname,'bower_components')));
 app.use('/node_modules', express.static(path.join(__dirname,'node_modules')));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'client')));
 
 var renderIndex = function(req, res) {
-    res.sendFile(path.resolve(__dirname, 'public/index.html'));
+    res.sendFile(path.resolve(__dirname, 'client/index.html'));
 };
 
 app.get('/*', renderIndex);

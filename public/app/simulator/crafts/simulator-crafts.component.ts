@@ -2,6 +2,7 @@ import { Component }        from '@angular/core';
 
 @Component({
   moduleId: module.id,
-  template: '<h5>SimulatorCraftsComponent</h5>'
+  templateUrl: './simulator-crafts.component.html',
+  styleUrls: ['./simulator-crafts.component.css']
 })
 export class SimulatorCraftsComponent { }

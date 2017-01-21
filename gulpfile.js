@@ -26,15 +26,15 @@ gulp.task('default', function() {
 
 // Testing
 
-// gulp.task('mocha', function() {
-//   return gulp.src(['test/**/*Test.js'], {
-//       read: false
-//     })
-//     .pipe(mocha({
-//       reporter: 'list'
-//     }))
-//     .on('error', gutil.log);
-// });
+gulp.task('mocha', function() {
+  return gulp.src(['test/**/*Test.js'], {
+      read: false
+    })
+    .pipe(mocha({
+      reporter: 'list'
+    }))
+    .on('error', gutil.log);
+});
 //
 // gulp.task('karma', function(done) {
 //   new KarmaServer({

@@ -32,6 +32,7 @@
     "cookie-parser": "^1.4.3",
     "core-js": "^2.4.1",
     "karma": "^1.4.0",
+    "lodash": "^4.17.4",
     "rxjs": "5.0.1",
     "systemjs": "0.19.40",
     "zone.js": "^0.7.6"
@@ -71,6 +72,7 @@
     "q": "^1.4.1",
     "rimraf": "^2.5.4",
     "run-sequence": "^1.2.2",
+    "sinon": "^1.17.7",
     "tslint": "^3.15.1",
     "typescript": "~2.0.10"
   },

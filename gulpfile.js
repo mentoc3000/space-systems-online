@@ -28,7 +28,7 @@ gulp.task('default', function() {
 
 gulp.task('mocha', function() {
   return gulp.src([
-    '**/*Test.js',
+    '**/*.test.js',
     '!server/lib/gmat/**/*',
     '!server/lib/gmat-dist/**/*',
     '!node_modules/**/*',

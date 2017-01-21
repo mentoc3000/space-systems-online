@@ -16,5 +16,5 @@ _temp
 .*.swp
 *.css
 .sass-cache
-lib/gmat-dist
-lib/gmat
+server/lib/gmat-dist
+server/lib/gmat

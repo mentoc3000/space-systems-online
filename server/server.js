@@ -8,12 +8,12 @@ var app = express();
 app.set('port', process.env.PORT || 3002);
 // app.enable('strict routing');
 
-app.use('/bower_components', express.static(path.join(__dirname,'bower_components')));
-app.use('/node_modules', express.static(path.join(__dirname,'node_modules')));
-app.use(express.static(path.join(__dirname, 'client')));
+app.use('/bower_components', express.static(path.join(__dirname,'../bower_components')));
+app.use('/node_modules', express.static(path.join(__dirname,'../node_modules')));
+app.use(express.static(path.join(__dirname, '../client')));
 
 var renderIndex = function(req, res) {
-    res.sendFile(path.resolve(__dirname, 'client/index.html'));
+    res.sendFile(path.resolve(__dirname, '../client/index.html'));
 };
 
 app.get('/*', renderIndex);

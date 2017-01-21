@@ -49,19 +49,19 @@ gulp.task('mocha', function() {
 // Building
 
 gulp.task('sass', function() {
-  return gulp.src('public/**/*.scss')
+  return gulp.src('client/**/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./public/'))
+    .pipe(gulp.dest('./client/'))
     /* Gulp takes everything that's a wildcard
      * or a globstar into its virtual file name. */
 });
 
 // gulp.task('sass:changed', function() {
-//   return gulp.src('public/**/*.scss')
+//   return gulp.src('client/**/*.scss')
 //     .pipe(changedInPlace())
 //     .pipe(logger())
 //     .pipe(sass().on('error', sass.logError))
-//     .pipe(gulp.dest('./public/'))
+//     .pipe(gulp.dest('./client/'))
 //     /* Gulp takes everything that's a wildcard
 //      * or a globstar into its virtual file name. */
 // });
@@ -95,11 +95,11 @@ gulp.task('build', [
 // ]);
 
 gulp.task('watch', function() {
-  gulp.watch(['public/**/*.ts'],['tsc']).on('change', function(e) {
+  gulp.watch(['client/**/*.ts'],['tsc']).on('change', function(e) {
     console.log('TypeScript file ' + e.path + ' has been changed. Compiling.');
   });
 
-  gulp.watch(['public/**/*.scss'],['sass']).on('change', function(e) {
+  gulp.watch(['client/**/*.scss'],['sass']).on('change', function(e) {
     console.log('Sass file ' + e.path + ' has been changed. Updating.');
   });
 })
@@ -109,11 +109,11 @@ gulp.task('watch', function() {
 gulp.task('serve', function() {
 
   return nodemon({
-    script: 'server.js',
+    script: 'server/server.js',
     ext: 'html css js',
     ignore: [
-      'lib/gmat/*',
-      'lib/gmat-dist/*'
+      'server/lib/gmat/*',
+      'server/lib/gmat-dist/*'
     ],
     // tasks: ['sass', 'tsc']
   })

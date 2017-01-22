@@ -10,6 +10,7 @@ app.set('port', process.env.PORT || 3002);
 
 app.use('/bower_components', express.static(path.join(__dirname,'../bower_components')));
 app.use('/node_modules', express.static(path.join(__dirname,'../node_modules')));
+app.use('/api/sim', require('./controllers/api/simulation.controller'));
 app.use(express.static(path.join(__dirname, '../client')));
 
 var renderIndex = function(req, res) {

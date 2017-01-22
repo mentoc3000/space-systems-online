@@ -1,0 +1,52 @@
+.script {
+  display: flex;
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  height: 100%;
+}
+
+.input-holder {
+  text-align: center;
+  -webkit-flex: 1 1 auto; // Safari 6.1+
+  -ms-flex: 1 1 auto; // IE 10
+  flex: 1 1 auto;
+  position: relative;
+}
+
+.script textarea {
+  position: absolute;
+  top: 60px;
+  bottom: 40px;
+  left: 5%;
+  width: 90%;
+  resize: none;
+  overflow-y: auto;
+  border: 1px solid gray;
+}
+
+.script button {
+  position: fixed!important;
+  bottom: 5px!important;
+  right: 55%!important;
+}
+
+.output-holder {
+  text-align: center;
+  -webkit-flex: 1 1 auto; // Safari 6.1+
+  -ms-flex: 1 1 auto; // IE 10
+  flex: 1 1 auto;
+  position: relative;
+}
+
+.output {
+  position: absolute;
+  top: 60px;
+  bottom: 40px;
+  right: 5%;
+  width: 90%;
+  border: 1px solid gray;
+  overflow-y: auto;
+  text-align: left;
+  white-space: pre-line;
+}

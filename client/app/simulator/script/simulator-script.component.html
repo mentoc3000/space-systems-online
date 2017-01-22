@@ -1,15 +1,16 @@
 <div class="script">
       <div class="input-holder">
-         <form method="post">
+         <form>
             <h3>Script</h3>
-            <textarea id="scriptInput"></textarea>
-            <button>Submit</button>
+            <textarea id="scriptInput"
+              [(ngModel)]="script" name="script"></textarea>
+            <button type="button" (click)="submit()">Submit</button>
          </form>
       </div>
       <div class="output-holder">
          <h3>Output</h3>
          <div class="output">
-            <p></p>
+            <p>{{ output }}</p>
          </div>
       </div>
 </div>

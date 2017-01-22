@@ -1,4 +1,5 @@
 import { NgModule }               from '@angular/core';
+import { FormsModule }      from '@angular/forms';
 
 import { SimulatorRoutingModule } from './simulator-routing.module';
 import { SimulatorSharedModule }  from './shared/simulator-shared.module';
@@ -8,6 +9,7 @@ import { SimulatorMainMenuComponent }    from './main-menu/simulator-main-menu.c
 
 @NgModule({
   imports: [
+    FormsModule,
     SimulatorRoutingModule,
     SimulatorSharedModule
   ],

@@ -8,8 +8,8 @@ import { ScriptService }    from '../script.service';
   styleUrls: ['simulator-script.component.css']
 })
 export class SimulatorScriptComponent {
-  script: string;
-  output: string;
+  public script: string;
+  public output: string;
 
   constructor(
     private scriptService: ScriptService
@@ -20,7 +20,7 @@ export class SimulatorScriptComponent {
 
   submit() {
     this.scriptService.submitScript(this.script)
-    .then((output) => {
+    .then(output => {
       this.output = output;
     })
   }

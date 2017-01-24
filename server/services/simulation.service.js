@@ -1,7 +1,7 @@
 'use strict';
 
-// var Q = require('q');
-// var Promise = Q.Promise;
+var Q = require('q');
+var Promise = Q.Promise;
 var gmat = require('../lib/gmat');
 
 var service = {};
@@ -12,6 +12,8 @@ module.exports = service;
 
 function runScript(input) {
 
-   return gmat.runSim(JSON.parse(input));
+  console.log('server side service: ' + input);
+  return Promise.resolve(gmat.runSim(input));
+  // return 'works!';
 
 }

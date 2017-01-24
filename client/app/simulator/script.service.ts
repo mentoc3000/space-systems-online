@@ -23,10 +23,14 @@ export class ScriptService {
   */
 
   submitScript(script: string): Promise<string> {
-    // let headers = new Headers({ 'Content-Type': 'text/plain' });
-    // let options = new RequestOptions({ headers: headers });
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
 
-    return this.http.post(this.scriptUrl, script)
+    let body = {
+      'script': script
+    };
+
+    return this.http.post(this.scriptUrl, body, options)
       .toPromise()
       .then(this.extractData)
       .catch(this.handleError);

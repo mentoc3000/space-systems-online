@@ -1,6 +1,6 @@
 'use strict';
 
-var child_process = require('child_process');
+var childProcess = require('child_process');
 var Q = require('q');
 var Promise = Q.Promise;
 var fs = require('fs');
@@ -25,8 +25,6 @@ function runScript(script) {
 }
 
 // private
-
-var existingFileNumbers = [];
 
 
 function saveScript(script) {
@@ -68,7 +66,7 @@ function runGmat(filename) {
    return new Promise(function resolver(resolve, reject) {
 
       var command = buildCommand(filename);
-      child_process.exec(command, function(err, stdout, stderr) {
+      childProcess.exec(command, function(err, stdout, stderr) {
          if (err) {
             console.log(err);
             reject(err);

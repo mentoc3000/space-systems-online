@@ -8,6 +8,10 @@
 				"node_modules",
 				".sass-cache",
 				"bower_components"
+			],
+			"file_exclude_patterns":
+			[
+				"*.map"
 			]
 		}
 	]

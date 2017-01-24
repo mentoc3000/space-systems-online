@@ -1,7 +1,8 @@
 {
    "verbose": true,
    "ignore": [
-      "lib/gmat/*",
-      "lib/gmat-dist/*"
+      "server/lib/gmat/*",
+      "server/lib/gmat-dist/*",
+      "server/lib/scripts"
    ]
 }

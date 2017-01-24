@@ -39,8 +39,9 @@ export class ScriptService {
   }
 
   private extractData(res: Response) {
-    let body = res.text();
-    return body || '';
+    let body = res.json();
+    let stdout = body.stdout;
+    return stdout || '';
   }
 
   private handleError(error: Response | any) {

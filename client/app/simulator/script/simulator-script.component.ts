@@ -22,7 +22,7 @@ export class SimulatorScriptComponent {
     this.scriptService.submitScript(this.script)
     .then(output => {
       this.output = output;
-    })
+    });
   }
 
 }

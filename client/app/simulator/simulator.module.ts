@@ -7,7 +7,6 @@ import { SimulatorSharedModule }  from './shared/simulator-shared.module';
 
 import { SimulatorComponent }   from './simulator.component';
 import { SimulatorMainMenuComponent }    from './main-menu/simulator-main-menu.component';
-import { ScriptService }              from './script.service';
 
 
 @NgModule({
@@ -22,7 +21,6 @@ import { ScriptService }              from './script.service';
     SimulatorMainMenuComponent
   ],
   exports: [
-    ScriptService
   ],
   providers: [
   ]

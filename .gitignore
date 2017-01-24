@@ -18,3 +18,4 @@ _temp
 .sass-cache
 server/lib/gmat-dist
 server/lib/gmat
+sso.sublime-workspace

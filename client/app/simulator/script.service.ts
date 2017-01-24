@@ -1,11 +1,13 @@
-import { Injectable }       from '@angular/core';
-import { Headers,
+import { Injectable } from '@angular/core';
+import {
+  Headers,
   Http,
   RequestOptions,
-  Response }    from '@angular/http';
+  Response
+} from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
-import { Observable }     from 'rxjs/Observable';
+// import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class ScriptService {
@@ -17,7 +19,7 @@ export class ScriptService {
   /* dummy implmementation
   submitScript(script: string): Promise<string> {
     return new Promise<string>((resolve, reject) => {
-      resolve('script service works: ' + script);
+    resolve('script service works: ' + script);
     });
   }
   */
@@ -41,7 +43,7 @@ export class ScriptService {
     return body || '';
   }
 
-  private handleError (error: Response | any) {
+  private handleError(error: Response | any) {
     // In a real world app, we might use a remote logging infrastructure
     let errMsg: string;
     if (error instanceof Response) {

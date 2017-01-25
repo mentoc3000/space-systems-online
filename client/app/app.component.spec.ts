@@ -4,8 +4,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By }           from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-/*
+
 describe('AppComponent', function () {
+  it('works', () => expect(true).toEqual(true));
+  /*
   let de: DebugElement;
   let comp: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
@@ -31,5 +33,5 @@ describe('AppComponent', function () {
     expect(h1.innerText).toMatch(/angular/i,
       '<h1> should say something about "Angular"');
   });
+  */
 });
-*/

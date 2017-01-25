@@ -10,7 +10,7 @@ jasmine.DEFAULT_TIMEOUT_INTERVAL = 1000;
 
 // builtPaths: root paths for output ("built") files
 // get from karma.config.js, then prefix with '/base/' (default is 'app/')
-var builtPaths = (__karma__.config.builtPaths || ['app/'])
+var builtPaths = (__karma__.config.builtPaths || ['client/app/'])
                  .map(function(p) { return '/base/'+p;});
 
 __karma__.loaded = function () { };
@@ -54,14 +54,14 @@ System.config({
   },
 });
 
-System.import('systemjs.config.js')
+System.import('client/systemjs.config.js')
   .then(importSystemJsExtras)
   .then(initTestBed)
   .then(initTesting);
 
 /** Optional SystemJS configuration extras. Keep going w/o it */
 function importSystemJsExtras(){
-  return System.import('systemjs.config.extras.js')
+  return System.import('client/systemjs.config.extras.js')
   .catch(function(reason) {
     console.log(
       'Warning: System.import could not load the optional "systemjs.config.extras.js". Did you omit it by accident? Continuing without it.'

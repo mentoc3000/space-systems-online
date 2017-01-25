@@ -1,3 +1,5 @@
+'use strict';
+
 // /*global jasmine, __karma__, window*/
 Error.stackTraceLimit = 0; // "No stacktrace"" is usually best for app testing.
 

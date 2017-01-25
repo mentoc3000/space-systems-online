@@ -41,13 +41,13 @@ gulp.task('mocha', function() {
     }))
     .on('error', gutil.log);
 });
-//
-// gulp.task('karma', function(done) {
-//   new KarmaServer({
-//     configFile: __dirname + '/karma.conf.js',
-//     singleRun: true
-//   }, done).start();
-// });
+
+gulp.task('karma', function(done) {
+  new KarmaServer({
+    configFile: __dirname + '/karma.conf.js',
+    singleRun: true
+  }, done).start();
+});
 
 
 

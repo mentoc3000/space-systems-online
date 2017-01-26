@@ -27,7 +27,7 @@ gulp.task('default', function() {
 
 // Testing
 
-gulp.task( 'jasmine', function( ) {
+gulp.task( 'jasmine', ['tsc'], function( ) {
       return gulp.src( 'server/**/*.[Ss]pec.js' )
         .pipe( jasmine( {
           config: {
@@ -43,7 +43,7 @@ gulp.task( 'jasmine', function( ) {
     }
  );
 
-gulp.task('karma', function(done) {
+gulp.task('karma', ['tsc'], function(done) {
   new KarmaServer({
     configFile: __dirname + '/karma.conf.js',
     singleRun: true
@@ -102,7 +102,7 @@ gulp.task('build', [
 // ]);
 
 gulp.task('watch', function() {
-  gulp.watch(['client/**/*.ts'],['tsc']).on('change', function(e) {
+  gulp.watch(['client/**/*.ts','server/**/*.ts'],['tsc']).on('change', function(e) {
     console.log('TypeScript file ' + e.path + ' has been changed. Compiling.');
   });
 

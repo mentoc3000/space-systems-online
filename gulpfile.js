@@ -1,7 +1,8 @@
 'use strict';
 
 var gulp = require('gulp');
-var mocha = require('gulp-mocha');
+// var mocha = require('gulp-mocha')
+var jasmine = require('gulp-jasmine');;
 var gutil = require('gulp-util');
 var KarmaServer = require('karma').Server;
 // var jshint = require('gulp-jshint');
@@ -26,21 +27,21 @@ gulp.task('default', function() {
 
 // Testing
 
-gulp.task('mocha', function() {
-  return gulp.src([
-    '**/*.test.js',
-    '!server/lib/gmat/**/*',
-    '!server/lib/gmat-dist/**/*',
-    '!node_modules/**/*',
-    '!bower_components/**/*'
-  ], {
-      read: false
-    })
-    .pipe(mocha({
-      reporter: 'list'
-    }))
-    .on('error', gutil.log);
-});
+gulp.task( 'jasmine', function( ) {
+      return gulp.src( 'server/**/*.[Ss]pec.js' )
+        .pipe( jasmine( {
+          config: {
+            "spec_dir": "server",
+            "spec_files": [
+              "**/*[sS]pec.js"
+            ],
+            "helpers": [ ],
+            "stopSpecOnExpectationFailure": false,
+            "random": false
+          }
+        } ) )
+    }
+ );
 
 gulp.task('karma', function(done) {
   new KarmaServer({

@@ -65,6 +65,9 @@ module.exports = function(config) {
       { pattern: 'client/**/*.js', included: false, watched: true },
       { pattern: 'client/**/*.ts', included: false, watched: true },
       { pattern: 'client/**/*.js.map', included: false, watched: true },
+      // { pattern: 'server/**/*.js', included: false, watched: true },
+      // { pattern: 'server/**/*.ts', included: false, watched: true },
+      // { pattern: 'server/**/*.js.map', included: false, watched: true },
     ],
 
     // Proxied base paths for loading assets

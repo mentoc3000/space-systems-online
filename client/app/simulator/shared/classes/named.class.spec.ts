@@ -1,4 +1,3 @@
-import { expect } from 'chai';
 import { Named } from './named.class';
 
 describe('Named Class test', () => {
@@ -11,24 +10,24 @@ describe('Named Class test', () => {
    });
 
    it('has no name when first created', function() {
-      expect(named.getName()).to.equal('');
+      expect(named.getName()).toEqual('');
    });
 
    it('sets a name', function() {
       expect(function() {
          named.setName(name);
-      }).not.to.throw();
+      }).not.toThrow();
    });
 
    it('gets the set name', function() {
       named.setName(name);
-      expect(named.getName()).to.equal(name);
+      expect(named.getName()).toEqual(name);
    });
 
    it('deletes the name', function() {
       named.setName(name);
       named.deleteName();
-      expect(named.getName()).to.equal('');
+      expect(named.getName()).toEqual('');
    });
 
 });

@@ -1,7 +1,5 @@
 'use strict';
 
-var expect = require('chai').expect;
-var sinon = require('sinon');
 var scriptBuilder = require('./scriptBuilder');
 
 function baseSimulation() {
@@ -153,106 +151,106 @@ describe('Line Builder Tests', function() {
 
       it('outputs create antenna line', function() {
          var output = scriptBuilder.block.antenna(simulation.space.hardware.antenna);
-         expect(output).to.equal('Create Antenna ' + simulation.space.hardware.antenna.name + ';');
+         expect(output).toEqual('Create Antenna ' + simulation.space.hardware.antenna.name + ';');
       });
 
       it('outputs empty string if antenna is empty', function () {
          var output = scriptBuilder.block.antenna({});
-         expect(output).to.equal('');
+         expect(output).toEqual('');
       });
    });
 
-   describe.skip('array', function() {
+   xdescribe('array', function() {
    });
 
-   describe.skip('baryCenter',function() {
+   xdescribe('baryCenter',function() {
    });
 
-   describe.skip('batchEstimatorInv',function() {
+   xdescribe('batchEstimatorInv',function() {
    });
 
-   describe.skip('celestialBody',function() {
+   xdescribe('celestialBody',function() {
    });
 
-   describe.skip('chemicalTank',function() {
+   xdescribe('chemicalTank',function() {
    });
 
-   describe.skip('chemicalThruster',function() {
+   xdescribe('chemicalThruster',function() {
    });
 
-   describe.skip('coordinateSystem',function() {
+   xdescribe('coordinateSystem',function() {
    });
 
-   describe.skip('contactLocator',function() {
+   xdescribe('contactLocator',function() {
    });
 
-   describe.skip('differentialCorrector',function() {
+   xdescribe('differentialCorrector',function() {
    });
 
-   describe.skip('electricTank',function() {
+   xdescribe('electricTank',function() {
    });
 
-   describe.skip('electricThruster',function() {
+   xdescribe('electricThruster',function() {
    });
 
-   describe.skip('eclipseLocator',function() {
+   xdescribe('eclipseLocator',function() {
    });
 
-   describe.skip('ephemerisFile',function() {
+   xdescribe('ephemerisFile',function() {
    });
 
-   describe.skip('errorModel',function() {
+   xdescribe('errorModel',function() {
    });
 
-   describe.skip('fileInterface',function() {
+   xdescribe('fileInterface',function() {
    });
 
-   describe.skip('finiteBurn',function() {
+   xdescribe('finiteBurn',function() {
    });
 
-   describe.skip('fminconOptimizer',function() {
+   xdescribe('fminconOptimizer',function() {
    });
 
-   describe.skip('formation',function() {
+   xdescribe('formation',function() {
    });
 
-   describe.skip('gmatFunction',function() {
+   xdescribe('gmatFunction',function() {
    });
 
-   describe.skip('groundStation',function() {
+   xdescribe('groundStation',function() {
    });
 
-   describe.skip('impulsiveBurn',function() {
+   xdescribe('impulsiveBurn',function() {
    });
 
-   describe.skip('liberationPoint',function() {
+   xdescribe('liberationPoint',function() {
    });
 
-   describe.skip('matlabFunction',function() {
+   xdescribe('matlabFunction',function() {
    });
 
-   describe.skip('nuclearPowerSystem',function() {
+   xdescribe('nuclearPowerSystem',function() {
    });
 
-   describe.skip('propagator',function() {
+   xdescribe('propagator',function() {
    });
 
-   describe.skip('receiver',function() {
+   xdescribe('receiver',function() {
    });
 
-   describe.skip('reportFile',function() {
+   xdescribe('reportFile',function() {
    });
 
-   describe.skip('simulator',function() {
+   xdescribe('simulator',function() {
    });
 
-   describe.skip('snopt',function() {
+   xdescribe('snopt',function() {
    });
 
-   describe.skip('solarPowerSystem',function() {
+   xdescribe('solarPowerSystem',function() {
    });
 
-   describe.skip('solarSystem',function() {
+   xdescribe('solarSystem',function() {
    });
 
    describe('spacecraft',function() {
@@ -265,7 +263,7 @@ describe('Line Builder Tests', function() {
 
       it('Creates the spacecraft', function() {
          regex = new RegExp('^Create Spacecraft ' + spacecraftData.name + ';');
-         expect(output).to.match(regex);
+         expect(output).toMatch(regex);
       });
 
       for (var key in spacecraftData) {
@@ -277,103 +275,103 @@ describe('Line Builder Tests', function() {
       function keyTest(name, key, val) {
          it('adds ' + key + ' property', function(){
             regex = new RegExp("\\n" + name + '\\.' + key + ' \\= ' + val + ';($|\\n)');
-            expect(output).to.match(regex);
+            expect(output).toMatch(regex);
          });
       }
 
       it('outputs an empty string when spacecraft is blank', function() {
          output = scriptBuilder.block.spacecraft({});
-         expect(output).to.equal('');
+         expect(output).toEqual('');
       });
 
    });
 
-   describe.skip('statisticsAcceptFilter',function() {
+   xdescribe('statisticsAcceptFilter',function() {
    });
 
-   describe.skip('statisticsRejectFilter',function() {
+   xdescribe('statisticsRejectFilter',function() {
    });
 
-   describe.skip('string',function() {
+   xdescribe('string',function() {
    });
 
-   describe.skip('trackingFileSet',function() {
+   xdescribe('trackingFileSet',function() {
    });
 
-   describe.skip('transmitter',function() {
+   xdescribe('transmitter',function() {
    });
 
-   describe.skip('transponder',function() {
+   xdescribe('transponder',function() {
    });
 
-   describe.skip('variable',function() {
+   xdescribe('variable',function() {
    });
 
-   describe.skip('vf13ad',function() {
+   xdescribe('vf13ad',function() {
    });
 
-   describe.skip('achieve',function() {
+   xdescribe('achieve',function() {
    });
 
-   describe.skip('assignment',function() {
+   xdescribe('assignment',function() {
    });
 
-   describe.skip('beginFiniteBurn',function() {
+   xdescribe('beginFiniteBurn',function() {
    });
 
    describe('beginMissionSequence',function() {
       it('creates command', function(){
          var output = scriptBuilder.block.beginMissionSequence();
-         expect(output).to.equal('BeginMissionSequence;');
+         expect(output).toEqual('BeginMissionSequence;');
       });
    });
 
-   describe.skip('beginScript',function() {
+   xdescribe('beginScript',function() {
    });
 
-   describe.skip('callGmatFunction',function() {
+   xdescribe('callGmatFunction',function() {
    });
 
-   describe.skip('callMatlabFunction',function() {
+   xdescribe('callMatlabFunction',function() {
    });
 
-   describe.skip('callPythonFunction',function() {
+   xdescribe('callPythonFunction',function() {
    });
 
-   describe.skip('endFiniteBurn',function() {
+   xdescribe('endFiniteBurn',function() {
    });
 
-   describe.skip('findEvents',function() {
+   xdescribe('findEvents',function() {
    });
 
-   describe.skip('for',function() {
+   xdescribe('for',function() {
    });
 
-   describe.skip('getEphemStates',function() {
+   xdescribe('getEphemStates',function() {
    });
 
-   describe.skip('global',function() {
+   xdescribe('global',function() {
    });
 
-   describe.skip('if',function() {
+   xdescribe('if',function() {
    });
 
-   describe.skip('maneuver',function() {
+   xdescribe('maneuver',function() {
    });
 
-   describe.skip('markPoint',function() {
+   xdescribe('markPoint',function() {
    });
 
-   describe.skip('minimize',function() {
+   xdescribe('minimize',function() {
    });
 
-   describe.skip('nonlinearConstraint',function() {
+   xdescribe('nonlinearConstraint',function() {
    });
 
-   describe.skip('optimize',function() {
+   xdescribe('optimize',function() {
    });
 
-   describe.skip('penUpPenDown',function() {
+   xdescribe('penUpPenDown',function() {
    });
 
    describe('propagate',function() {
@@ -388,38 +386,38 @@ describe('Line Builder Tests', function() {
          var expected = 'Propagate ' + propagateData.propagatorName +
             '(' + propagateData.spacecraftName + ') ' +
             '{' + propagateData.stopCondition.join(', ') + '};';
-         expect(output).to.equal(expected);
+         expect(output).toEqual(expected);
       });
    });
 
-   describe.skip('report',function() {
+   xdescribe('report',function() {
    });
 
-   describe.skip('runEstimator',function() {
+   xdescribe('runEstimator',function() {
    });
 
-   describe.skip('runSimulator',function() {
+   xdescribe('runSimulator',function() {
    });
 
-   describe.skip('set',function() {
+   xdescribe('set',function() {
    });
 
-   describe.skip('stop',function() {
+   xdescribe('stop',function() {
    });
 
-   describe.skip('target',function() {
+   xdescribe('target',function() {
    });
 
-   describe.skip('toggle',function() {
+   xdescribe('toggle',function() {
    });
 
-   describe.skip('vary',function() {
+   xdescribe('vary',function() {
    });
 
-   describe.skip('while',function() {
+   xdescribe('while',function() {
    });
 
-   describe.skip('write',function() {
+   xdescribe('write',function() {
    });
 });
 
@@ -431,7 +429,7 @@ describe('Script Builder Tests', function() {
          var spacecraftData = fullSim.space.craft;
          var output = scriptBuilder.buildSpacecraft(spacecraftData);
          var spacecraftOutput = scriptBuilder.buildSpacecraft(spacecraftData);
-         expect(output).to.contain(spacecraftOutput);
+         expect(output).toContain(spacecraftOutput);
       });
    });
 
@@ -439,7 +437,7 @@ describe('Script Builder Tests', function() {
 
       it('builds empty string for empty object', function() {
          var output = scriptBuilder.buildHardware({});
-         expect(output).to.equal('');
+         expect(output).toEqual('');
       });
 
       it('adds antenna lines', function() {
@@ -447,7 +445,7 @@ describe('Script Builder Tests', function() {
          var hardwareData = fullSim.space.hardware;
          var output = scriptBuilder.buildHardware(hardwareData);
          var antennaOutput = scriptBuilder.block.antenna(hardwareData.antenna[0]);
-         expect(output).to.contain(antennaOutput);
+         expect(output).toContain(antennaOutput);
       });
    });
 
@@ -455,21 +453,21 @@ describe('Script Builder Tests', function() {
 
       it('builds empty string for empty object', function() {
          var output = scriptBuilder.buildMissionSequence({});
-         expect(output).to.equal('');
+         expect(output).toEqual('');
       });
 
       it('begins the mission sequence', function() {
          var fullSim = baseSimulation();
          var sequenceData = fullSim.space.craft.mission.sequence;
          var output = scriptBuilder.buildMissionSequence(sequenceData);
-         expect(output).to.contain(scriptBuilder.block.beginMissionSequence());
+         expect(output).toContain(scriptBuilder.block.beginMissionSequence());
       });
 
       it('contains the propagate lines', function() {
          var fullSim = baseSimulation();
          var sequenceData = fullSim.space.craft.mission.sequence;
          var output = scriptBuilder.buildMissionSequence(sequenceData);
-         expect(output).to.contain(scriptBuilder.block.propagate(sequenceData[0]));
+         expect(output).toContain(scriptBuilder.block.propagate(sequenceData[0]));
       });
    });
 });

@@ -1,6 +1,5 @@
 'use strict';
 
-var expect = require('chai').expect;
 var fs = require('fs');
 var path = require('path');
 var gmat = require('./gmat');
@@ -24,7 +23,7 @@ describe('GMAT module tests',function() {
             expectedOutput = readOutput(filename);
             gmat.runScript(script)
                .then(function(output){
-                  expect(output).to.equal(expectedOutput);
+                  expect(output).toEqual(expectedOutput);
                });
          });
       }

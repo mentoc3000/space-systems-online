@@ -1,8 +1,8 @@
-export function commentLine(line: string) {
+export function commentLineScriptBuilder(line: string) {
   return '% ' + line;
 }
 
-export function commentSegment(title: string) {
+export function commentSegmentScriptBuilder(title: string) {
   let newline = '\n';
   let spacer = '%----------------------------------------------------';
   let line = '%------ ' + title;

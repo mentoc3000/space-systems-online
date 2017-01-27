@@ -1,3 +1,3 @@
-export function beginMissionSequence(): string {
+export function beginMissionSequenceScriptBuilder(): string {
    return 'BeginMissionSequence;';
 };

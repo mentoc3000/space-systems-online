@@ -1,74 +1,74 @@
 export interface Simulation {
-  // ground?: GroundElements;
+  ground?: GroundElements;
   space: SpaceElements;
 }
 
 export interface GroundElements {
-  // celestialBody?: string;
-  // groundStations?: GroundStation[];
+  celestialBody?: string;
+  groundStations?: GroundStation[];
   hardware?: GroundHardware;
 }
 
-// export interface GroundStation {
-//   latitude: number;
-//   longitude: number;
-//   transmitter: string;
-//   receiver: string;
-// }
+export interface GroundStation {
+  latitude: number;
+  longitude: number;
+  transmitter: string;
+  receiver: string;
+}
 
 export interface GroundHardware {
-  // transmitters: Transmitter[];
-  // receivers: Receiver[];
+  transmitters: Transmitter[];
+  receivers: Receiver[];
   antennas: Antenna[];
 }
 
-// export interface Transmitter {
-//   name: string;
-// }
+export interface Transmitter {
+  name: string;
+}
 
-// export interface Receiver {
-//   name: string;
-// }
+export interface Receiver {
+  name: string;
+}
 
 export interface Antenna {
   name: string;
 }
 
 export interface SpaceElements {
-  // hardware?: SpaceHardware;
+  hardware?: SpaceHardware;
   crafts: Craft[];
 }
 
-// export interface SpaceHardware {
-//   transmitters: Transmitter[];
-//   receivers: Receiver[];
-//   antennas: Antenna[];
-//   thrusters: Thruster[];
-//   tanks: Tank[];
-//   solarPower: SolarPower[];
-//   nuclearPower: NuclearPower[];
-//   navigation: Navigation[];
-// }
+export interface SpaceHardware {
+  transmitters: Transmitter[];
+  receivers: Receiver[];
+  antennas: Antenna[];
+  thrusters: Thruster[];
+  tanks: Tank[];
+  solarPower: SolarPower[];
+  nuclearPower: NuclearPower[];
+  navigation: Navigation[];
+}
 
-// export interface Thruster {
-//   name: string;
-// }
+export interface Thruster {
+  name: string;
+}
 
-// export interface Tank {
-//   name: string;
-// }
+export interface Tank {
+  name: string;
+}
 
-// export interface SolarPower {
-//   name: string;
-// }
+export interface SolarPower {
+  name: string;
+}
 
-// export interface NuclearPower {
-//   name: string;
-// }
+export interface NuclearPower {
+  name: string;
+}
 
-// export interface Navigation {
-//   name: string;
-// }
+export interface Navigation {
+  name: string;
+}
 
 export interface Craft {
   name: string;

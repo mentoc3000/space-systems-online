@@ -2,7 +2,7 @@ import {
   Epoch,
   CartesianOrbit,
   KeplerianOrbit
-} from '../script-builder-interfaces';
+} from '../../simulation-interfaces';
 
 
 export function spacecraftScriptBuilder(

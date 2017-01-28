@@ -80,7 +80,7 @@ export interface Craft {
 
 export interface Mission {
   initialOrbit: Orbit;
-  intiialEpoch: Epoch;
+  initialEpoch: Epoch;
   sequence: Command[];
 }
 

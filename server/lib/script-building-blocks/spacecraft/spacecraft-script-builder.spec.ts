@@ -1,9 +1,9 @@
+import { spacecraftScriptBuilder } from './spacecraft-script-builder';
 import {
   Epoch,
   CartesianOrbit,
-  KeplerianOrbit,
-  spacecraftScriptBuilder
-} from './spacecraft-script-builder';
+  KeplerianOrbit
+} from '../script-builder-interfaces';
 
 describe('spacecraft script builder', () => {
 

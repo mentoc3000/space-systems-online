@@ -45,7 +45,7 @@ export function buildScript(simulation: Simulation): string {
 
 
 
-function buildSpacecrafts(crafts: Craft[]) {
+function buildSpacecrafts(crafts: Craft[]): string {
   let lines: string[] = [];
 
   for (let craft of crafts) {

@@ -1,5 +1,3 @@
-'use strict';
-
 exports = {};
 
 exports.buildScript = buildScript;

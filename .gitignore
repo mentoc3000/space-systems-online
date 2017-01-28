@@ -20,3 +20,4 @@ _temp
 server/lib/gmat-dist
 server/lib/gmat
 sso.sublime-workspace
+*.old

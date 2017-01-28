@@ -79,19 +79,19 @@ export interface Craft {
 }
 
 export interface Mission {
-  initialOrbit: Orbit;
+  initialOrbit: CartesianOrbit | KeplerianOrbit;
   initialEpoch: Epoch;
-  sequence: Command[];
+  sequence: Array<Propagate>;
 }
-
 export interface Epoch {
   dateFormat: string;
   epoch: string;
 }
 
-export interface Orbit {
+interface Orbit {
   system: string;
 }
+
 
 export interface CartesianOrbit extends Orbit {
   system: 'cartesian';
@@ -113,11 +113,12 @@ export interface KeplerianOrbit extends Orbit {
   ta: number;
 }
 
-export interface Command {
+interface Command {
   type: string;
 }
 
 export interface Propagate extends Command {
-  propagator: string;
+  type: 'propagate';
+  propagatorName: string;
   stopConditions: string[];
 }

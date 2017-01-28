@@ -28,7 +28,7 @@ export interface GroundHardware {
 
 // export interface Receiver {
 //   name: string;
-}
+// }
 
 export interface Antenna {
   name: string;

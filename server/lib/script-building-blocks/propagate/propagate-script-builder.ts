@@ -1,5 +1,3 @@
-import { validateName } from '../param-checks';
-
 export function propagateScriptBuilder(
   propagatorName: string,
   spacecraftName: string,
@@ -10,11 +8,7 @@ export function propagateScriptBuilder(
 
   let output = 'Propagate ';
 
-  validateName(propagatorName);
-  validateName(spacecraftName);
-
   if (mode) {
-    validateName(mode);
     output = output + mode + ' ';
   }
 

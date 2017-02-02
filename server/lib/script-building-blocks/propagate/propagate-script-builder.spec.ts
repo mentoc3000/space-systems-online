@@ -49,20 +49,4 @@ describe('propagate', () => {
       ' (' + spacecraftName + ') {' + stopConditions.join(', ') + '};');
   });
 
-  it('rejects a bad propagator name', () => {
-    propagatorName = '1337 $hit';
-    expect(() => {
-      propagateScriptBuilder(propagatorName,
-        spacecraftName, stopCondition);
-    }).toThrowError();
-  });
-
-  it('rejects a bad spacecraft name', () => {
-    spacecraftName = 'xxxX!Head Shot!Xxxx';
-    expect(() => {
-      propagateScriptBuilder(propagatorName,
-        spacecraftName, stopCondition);
-    }).toThrowError();
-  });
-
 });

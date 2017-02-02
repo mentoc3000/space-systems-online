@@ -1,3 +1,4 @@
+
 import {
   Simulation,
   // SpaceElements,
@@ -9,6 +10,81 @@ import { beginMissionSequenceScriptBuilder } from './script-building-blocks/begi
 import { commentSegmentScriptBuilder, commentLineScriptBuilder } from './script-building-blocks/comment/comment-script-builder';
 import { propagateScriptBuilder } from './script-building-blocks/propagate/propagate-script-builder';
 import { spacecraftScriptBuilder } from './script-building-blocks/spacecraft/spacecraft-script-builder';
+
+import childProcess = require('child_process');
+import Q = require('q');
+import Promise = Q.Promise;
+import fs = require('fs');
+import path = require('path');
+
+export function runSim(simulation: Simulation): Promise<string> {
+  let script = buildScript(simulation);
+  return runScript(script);
+}
+
+export function runScript(script: string): Promise<any> {
+  return saveScript(script).then(runGmat);
+}
+// private
+function saveScript(script: string): Promise<any> {
+  let filename = newFileName();
+  return Promise(function resolver(resolve, reject) {
+    fs.writeFile(filename, script, function(err) {
+      if (err) {
+        console.log(err);
+        reject(err);
+      } else {
+        resolve(filename);
+      }
+    });
+  });
+}
+
+function newFileName(): string {
+  let num = Date.now();
+  let filename = makeFileName(num);
+  return filename;
+}
+
+function makeFileName(num: number): string {
+  let dir = './scripts/';
+  let base = 'sim';
+  let extension = 'script';
+  let filename = path.resolve(__dirname, dir + base + num + '.' + extension);
+  return filename;
+}
+
+function runGmat(filename: string): Promise<any> {
+  return Promise(function resolver(resolve, reject) {
+    let command = buildCommand(filename);
+    childProcess.exec(command, function(err, stdout, stderr) {
+      if (err) {
+        console.log(err);
+        reject(err);
+      } else {
+        let output = {
+          stdout: stdout
+        };
+        resolve(output);
+      }
+      deleteFile(filename);
+    });
+  });
+
+  function buildCommand(fname: string): string {
+    let gmat = path.resolve(__dirname, './gmat-dist/R2016a/bin/GmatConsole');
+    let command = gmat + ' ' + fname;
+    return command;
+  }
+}
+
+function deleteFile(filename: string): void {
+  fs.unlink(filename, function(err) {
+    if (err) {
+      console.log(err);
+    }
+  });
+}
 
 
 

@@ -21,3 +21,4 @@ server/lib/gmat-dist
 server/lib/gmat
 sso.sublime-workspace
 *.old
+server/lib/scripts

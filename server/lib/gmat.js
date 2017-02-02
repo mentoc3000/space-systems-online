@@ -34,15 +34,21 @@ function saveScript(script) {
     });
 }
 function newFileName() {
-    var num = Date.now();
+    // let num = Date.now(); 
+    var s;
+    var n;
+    _a = process.hrtime(), s = _a[0], n = _a[1];
+    var num = s * Math.pow(10, 9) + n;
     var filename = makeFileName(num);
     return filename;
+    var _a;
 }
 function makeFileName(num) {
     var dir = './scripts/';
     var base = 'sim';
     var extension = 'script';
     var filename = path.resolve(__dirname, dir + base + num + '.' + extension);
+    console.log('file: ' + filename);
     return filename;
 }
 function runGmat(filename) {

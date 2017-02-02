@@ -41,7 +41,11 @@ function saveScript(script: string): Promise<any> {
 }
 
 function newFileName(): string {
-  let num = Date.now();
+  // let num = Date.now();
+  let s: number;
+  let n: number;
+  [s, n] = process.hrtime();
+  let num: number = s * Math.pow(10, 9) + n;
   let filename = makeFileName(num);
   return filename;
 }
@@ -51,6 +55,7 @@ function makeFileName(num: number): string {
   let base = 'sim';
   let extension = 'script';
   let filename = path.resolve(__dirname, dir + base + num + '.' + extension);
+  console.log('file: ' + filename);
   return filename;
 }
 

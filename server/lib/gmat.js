@@ -34,7 +34,7 @@ function saveScript(script) {
     });
 }
 function newFileName() {
-    // let num = Date.now(); 
+    // let num = Date.now();
     var s;
     var n;
     _a = process.hrtime(), s = _a[0], n = _a[1];

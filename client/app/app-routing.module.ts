@@ -11,7 +11,7 @@ export const routes: Routes = [
     path: 'simulator',
     loadChildren: 'app/simulator/simulator.module#SimulatorModule'
   },
-]
+];
 
 
 @NgModule({

@@ -31,8 +31,9 @@ describe('GMAT module tests', function () {
             return fs.readFileSync(filepath, 'utf8');
         }
     });
-    describe('runSim', function () {
+    xdescribe('runSim', function () {
         it('runs basic propagation', function () {
+            expect('').toEqual('COMPLETE ME');
         });
     });
     function readOutput(filename) {

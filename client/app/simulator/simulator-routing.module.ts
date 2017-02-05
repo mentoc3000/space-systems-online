@@ -3,6 +3,13 @@ import { Routes,
   RouterModule }         from '@angular/router';
 
 import { SimulatorComponent }  from './simulator.component';
+import { SimulatorDefaultComponent } from './default/simulator-default.component';
+import { SimulatorGroundComponent }  from './ground/simulator-ground.component';
+import { SimulatorCraftsComponent }  from './crafts/simulator-crafts.component';
+import { SimulatorScriptComponent }  from './script/simulator-script.component';
+import { SimulatorOrbitComponent }   from './orbit/simulator-orbit.component';
+import { SimulatorTrackComponent }   from './track/simulator-track.component';
+import { SimulatorOptionsComponent } from './options/simulator-options.component';
 
 const routes: Routes = [
 
@@ -12,31 +19,31 @@ const routes: Routes = [
   children: [
   {
     path: '',
-    loadChildren: 'app/simulator/default/simulator-default.module#SimulatorDefaultModule'
+    component: SimulatorDefaultComponent
   },
   {
     path: 'ground',
-    loadChildren: 'app/simulator/ground/simulator-ground.module#SimulatorGroundModule'
+    component: SimulatorGroundComponent
   },
   {
     path: 'crafts',
-    loadChildren: 'app/simulator/crafts/simulator-crafts.module#SimulatorCraftsModule'
+    component: SimulatorCraftsComponent
   },
   {
     path: 'script',
-    loadChildren: 'app/simulator/script/simulator-script.module#SimulatorScriptModule'
+    component: SimulatorScriptComponent
   },
   {
     path: 'orbit',
-    loadChildren: 'app/simulator/orbit/simulator-orbit.module#SimulatorOrbitModule'
+    component: SimulatorOrbitComponent
   },
   {
     path: 'track',
-    loadChildren: 'app/simulator/track/simulator-track.module#SimulatorTrackModule'
+    component: SimulatorTrackComponent
   },
   {
     path: 'options',
-    loadChildren: 'app/simulator/options/simulator-options.module#SimulatorOptionsModule'
+    component: SimulatorOptionsComponent
   }
 ]
 }

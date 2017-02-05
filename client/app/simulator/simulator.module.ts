@@ -3,6 +3,7 @@ import { FormsModule }      from '@angular/forms';
 import { HttpModule }          from '@angular/http';
 
 import { SimulatorRoutingModule } from './simulator-routing.module';
+import { SimulatorCoreModule }    from './core/simulator-core.module';
 import { SimulatorSharedModule }  from './shared/simulator-shared.module';
 import { SimulatorCraftsModule }  from './crafts/simulator-crafts.module';
 import { SimulatorDefaultModule } from './default/simulator-default.module';
@@ -21,6 +22,7 @@ import { SimulatorMainMenuComponent }    from './main-menu/simulator-main-menu.c
     FormsModule,
     HttpModule,
     SimulatorRoutingModule,
+    SimulatorCoreModule,
     SimulatorSharedModule,
     SimulatorCraftsModule,
     SimulatorDefaultModule,

@@ -10,7 +10,7 @@ import 'rxjs/add/operator/toPromise';
 // import { Observable } from 'rxjs/Observable';
 
 @Injectable()
-export class ScriptService {
+export class GmatService {
 
   private scriptUrl = 'api/sim/submit';
 

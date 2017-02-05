@@ -1,6 +1,6 @@
 import { Component }        from '@angular/core';
 
-import { ScriptService }    from '../script.service';
+import { GmatService }    from '../core/gmat.service';
 
 @Component({
   moduleId: module.id,
@@ -12,14 +12,14 @@ export class SimulatorScriptComponent {
   public output: string;
 
   constructor(
-    private scriptService: ScriptService
+    private gmatService: GmatService
   ) {
     this.script = '';
     this.output = '';
   }
 
   submit() {
-    this.scriptService.submitScript(this.script)
+    this.gmatService.submitScript(this.script)
     .then(output => {
       this.output = output;
     });

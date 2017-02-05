@@ -4,7 +4,6 @@ import { FormsModule }      from '@angular/forms';
 import { SimulatorScriptRoutingModule }  from './simulator-script-routing.module';
 
 import { SimulatorScriptComponent }  from './simulator-script.component';
-import { ScriptService }              from '../script.service';
 
 @NgModule({
   imports: [
@@ -15,7 +14,6 @@ import { ScriptService }              from '../script.service';
     SimulatorScriptComponent
   ],
   providers: [
-    ScriptService
   ]
 })
 export class SimulatorScriptModule { }
